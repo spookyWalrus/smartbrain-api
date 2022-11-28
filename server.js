@@ -9,6 +9,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+// credentials for local host and Heroku
 const db = knex({
   client: 'pg',
   connection: {
