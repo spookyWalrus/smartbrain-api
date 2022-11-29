@@ -1,8 +1,8 @@
 const handleApiCall = (req,res) =>{
 	const raw = JSON.stringify({
       "user_app_id": {
-          "user_id": "7a01kgjbtwgm",
-          "app_id": "e83cd2c610de44539de72c1f70ccacbb"
+          "user_id": process.env.CLARIFAI_USER_ID,
+          "app_id": process.env.CLARIFAI_APP_ID
        },
       "inputs": [
         {
