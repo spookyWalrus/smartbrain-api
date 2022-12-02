@@ -10,17 +10,17 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 
-// credentials for local host and Heroku
+// credentials 
 const db = knex({
   client: 'pg',
   connection: {
 	    host : 'dpg-cdp67sen6mpuqrucfbsg-a',
 	    port : 5432,
-	    user : 'smartbrain_db_user',
+	    user : process.env.USER,
 	    password : process.env.DB_PASSWORD,
-	    database : 'smart-brain',
+	    database : process.env.DATABASE,
 			ssl: true
 	  }
 });
