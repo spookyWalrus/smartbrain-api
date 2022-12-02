@@ -18,7 +18,7 @@ const db = knex({
   connection: {
 	    host : 'dpg-cdp67sen6mpuqrucfbsg-a',
 	    port : 5432,
-	    user : process.env.USER,
+	    user : 'smartbrain_db_user',
 	    password : process.env.DB_PASSWORD,
 	    database : process.env.DATABASE,
 			ssl: true
