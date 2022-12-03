@@ -17,10 +17,9 @@ const db = knex({
   client: 'pg',
   connection: {
 	    host : process.env.HOSTNAME,
-	    // port : 5432,
+	    port : 5432,
 	    user : 'smartbrain_db_user',
 	    password : process.env.DB_PASSWORD,
-	    // password : jL3vO4TqmFvqsvwxtkV3uMccsBmbDM8w,
 	    database : process.env.DATABASE,
 			ssl: true
 	  }
@@ -48,6 +47,6 @@ app.get('/profile/:id',(req,res) =>{profile.handleProfile(req,res,db) });
 app.put('/image',(req,res)=>{image.handleImage(req,res,db) });
 app.post('/imageurl',(req,res)=>{image.handleApiCall(req,res)});
 
-app.listen(process.env.PORT || 3000, () =>{
+app.listen(process.env.PORT || 5432, () =>{
 	console.log('app is running on port 3000');
 })
