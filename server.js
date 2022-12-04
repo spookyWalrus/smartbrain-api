@@ -11,23 +11,22 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
-
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 // credentials 
 const db = knex({
   client: 'pg',
   connection: {
+  		connectionString: process.env.DATABASE_URL,
 	    host : process.env.HOSTNAME,
 	    port : 5432,
-	    user : 'smartbrain_db_user',
+	    user : process.env.USERNAME,
 	    password : process.env.DB_PASSWORD,
 	    database : process.env.DATABASE,
-			ssl: true
+			ssl: {rejectUnauthorized: false}
 	  }
 });
-
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
 
 app.get('/',(req,res)=>{
 	// res.send(dataBase.users);
