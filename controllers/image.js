@@ -22,7 +22,7 @@ const handleApiCall = (req,res) =>{
         'Accept': 'application/json',
         // 'Authorization': '9bd15bd8ec014246bd53cff4f1',
         // ^^ This is PAT, not API key
-        'Authorization': 'Key f9a52f8f40844fa8baa9c2c383e58d1a'
+        'Authorization': process.env.CLARIFAI_AUTH_API_KEY
          // ^^ This is API key
       },
       body: raw
