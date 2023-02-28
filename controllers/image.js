@@ -20,7 +20,7 @@ const handleApiCall = (req,res) =>{
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Authorization': 'Key f9a52f8f40844fa8baa9c2c383e58d1a'
+        'Authorization': process.env.CLARIFAI_AUTH_API_KEY
       },
       body: raw
     };
