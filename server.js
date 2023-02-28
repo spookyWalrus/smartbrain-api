@@ -39,6 +39,7 @@ app.get('/',(req,res)=>{
 app.post('/signin',(req,res) => {signin.handleSignin(req,res,db,bcrypt) });
 
 app.post('/register',(req,res) => {
+	console.log('connected to the database: ', process.env.DATABASE, ' Clarifai is: ',process.env.CLARIFAI_AUTH_API_KEY);
 	register.handleRegister(req,res,db,bcrypt) });
 
 app.get('/profile/:id',(req,res) =>{profile.handleProfile(req,res,db) });
