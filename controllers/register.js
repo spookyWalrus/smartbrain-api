@@ -29,7 +29,7 @@ const handleRegister = (req,res,db,bcrypt) => {
 		.then(trx.commit)
 		.catch(trx.rollback)
 	})
-	.catch(error => {res.status(400).json(error)})
+	.catch(error => {res.status(400).json('error with registration')})
 }
 
 module.exports = {
