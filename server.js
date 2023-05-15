@@ -14,7 +14,7 @@ const image = require('./controllers/image');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-// credentials 
+//  credentials
 const db = knex({
   client: 'pg',
   connection: {
@@ -47,7 +47,7 @@ app.put('/image',(req,res)=>{image.handleImage(req,res,db) });
 app.post('/imageurl',(req,res)=>{image.handleApiCall(req,res)});
 
 app.listen(process.env.PORT || 3000, () =>{
-	console.log('app is running on vvv');
+	console.log('app is running on database below');
 	console.log('connected to the database: ', process.env.DATABASE);
 	console.log( process.env.PORT ); 
 })
