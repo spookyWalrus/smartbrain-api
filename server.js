@@ -12,16 +12,16 @@ const image = require("./controllers/image");
 
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 const app = express();
-app.use(
-  cors({
-    origin: "https://nimble-shortbread-540549.netlify.app",
-    methods: "POST,OPTIONS",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: ["Content-Type"],
-    // credentials: true,
-  })
-);
 app.use(bodyParser.json());
+app.use(cors());
+//   cors({
+//     origin: "https://nimble-shortbread-540549.netlify.app",
+//     methods: "POST,OPTIONS",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     allowedHeaders: ["Content-Type"],
+//     // credentials: true,
+//   })
+// );
 
 //  credentials
 const db = knex({
