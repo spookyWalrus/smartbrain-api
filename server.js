@@ -17,8 +17,8 @@ app.use(
     origin: "https://nimble-shortbread-540549.netlify.app",
     methods: "POST,OPTIONS",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
+    allowedHeaders: ["Content-Type"],
+    // credentials: true,
   })
 );
 app.use(bodyParser.json());
