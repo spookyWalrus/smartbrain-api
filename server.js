@@ -16,7 +16,9 @@ app.use(
   cors({
     origin: "https://nimble-shortbread-540549.netlify.app",
     methods: "POST,OPTIONS",
-    allowedHeaders: "Content-Type",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 app.use(bodyParser.json());
